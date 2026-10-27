@@ -1,595 +1,1600 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- remics cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-<body class="font-['Inter_Tight']">
+    <!-- swiper cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  </head>
+
+  <body class="relative font-['Inter_Tight']">
     <!-- nav and hero section -->
-    <section class="relative bg-[url('assets/secPageHeroImg.jpg')] bg-cover bg-center h-[990px]">
+    <section
+      class="relative bg-[url('assets/secPageHeroImg.jpg')] bg-cover bg-center lg:h-[990px] w-full overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 h-full w-full bg-linear-to-r from-[#000000eb] to-white-500 z-0"
+      ></div>
 
-        <div class="absolute top-0 left-0  h-full w-full bg-linear-to-r from-[#000000eb] to-white-500 z-0"></div>
+      <nav
+        class="relative z-10 h-[110px] border-b-2 border-[#979797] flex justify-between items-center md:gap-30 md:px-[45px] px-[10px]"
+      >
+        <div class="md:flex hidden">
+          <img src="assets/logo2.png" alt="" class="lg:h-[110px] h-[80px]" />
+        </div>
 
-        <nav
-            class="relative z-10 h-[110px] border-b-2 border-[#979797] flex justify-between items-center gap-30  px-[45px]">
-            <img src="assets/logo2.png" alt="" class="h-[110px]">
-            <div class="flex justify-center items-center gap-10 text-white text-[14px] font-[700]">
-                <a href="#" class="cursore-pointer">HOME</a>
+        <div class="flex justify-between w-full items-center md:hidden pr-5">
+          <img src="assets/logo2.png" alt="" class="lg:h-[110px] h-[80px]" />
+          <i class="ri-menu-line text-white text-[20px]" id="menu-btn"></i>
+        </div>
 
-                <div class="flex items-center gap-1 cursor-pointer">
-                    <a href="#">OUR SERVICES</a>
-                    <i class="ri-arrow-drop-down-line text-[24px]"></i>
-                </div>
+        <div
+          class="md:flex justify-center items-center md:gap-10 text-white text-[14px] font-[700] hidden"
+        >
+          <a href="#" class="cursore-pointer">HOME</a>
 
-                <a href="#" class="cursore-pointer">WHO WE ARE</a>
+          <div class="flex items-center gap-1 cursor-pointer">
+            <a href="#">OUR SERVICES</a>
+            <i class="ri-arrow-drop-down-line text-[24px]"></i>
+          </div>
 
-                <a href="#" class="cursore-pointer">CAREERS</a>
+          <a href="#" class="cursore-pointer">WHO WE ARE</a>
 
-                <a href="#" class="cursore-pointer">GET IN TOUCH</a>
+          <a href="#" class="cursore-pointer">CAREERS</a>
 
-            </div>
-            <div class="bg-[#F9FA0E] py-[15px] px-[33px] text-16px font-bold uppercase flex items-center gap-2">
-                <p> Request a Free Quote</p>
-                <i class="ri-arrow-right-up-line text-black"></i>
-            </div>
-        </nav>
+          <a href="#" class="cursore-pointer">GET IN TOUCH</a>
+        </div>
+        <!-- hidden menu bar -->
+        <div
+          id="hidden-menu"
+          class="absolute top-0 h-screen md:hidden block bg-[#60606799] w-full backdrop-blur-sm z-99 translate-x-full transition-transform duration-500 ease-in-out"
+        >
+          <div class="flex justify-between items-center px-5">
+            <img src="assets/logo2.png" alt="" class="lg:h-[110px] h-[90px]" />
+            <i
+              class="ri-close-large-line text-white text-[20px]"
+              id="close-btn"
+            ></i>
+          </div>
+          <div
+            class="flex flex-col gap-5 items-center text-white mt-10 font-bold"
+          >
+            <a href="#" class="cursore-pointer">HOME</a>
 
-        <main class="h-[80vh] px-[58px] pt-60  relative z-10 flex flex-col gap-15">
+            <a href="#">OUR SERVICES</a>
 
-            <div class="uppercase">
-                <h1 class="text-[47px] text-[#F9FA0E] font-bold max-w-4xl ">Commercial <span
-                        class="font-[300]">Demolition</span> & Strip-Out Contractors
-                </h1>
-                <span class="text-white font-[300] text-[47px]"> Across London, Essex, Kent & Hertfordshire </span>
-            </div>
+            <a href="#" class="cursore-pointer">WHO WE ARE</a>
 
-            <p
-                class="text-[18px] leading-[30px] max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent">
-                Stonebridge Demolition combines an established background in commercial waste clearance with growing
-                experience in demolition and strip-out works.
-            </p>
+            <a href="#" class="cursore-pointer">CAREERS</a>
 
-            <div class="flex items-center  gap-5 text-white">
-                <i class="ri-phone-fill text-4xl"></i>
-                <div>
-                    <p class="text-[12px] font-[400] uppercase">Call us</p>
-                    <p class="text-[24.5px] font-bold">07405 438819</p>
-                </div>
-            </div>
+            <a href="#" class="cursore-pointer">GET IN TOUCH</a>
 
-            <div class="flex items-center gap-4">
-                <div class="bg-[#F9FA0E] py-[15px] px-[33px] text-16px font-bold uppercase flex items-center gap-2">
-                    <p> Request a Free Quote</p>
-                    <i class="ri-arrow-right-up-line text-black"></i>
-                </div>
-                <div class="bg-[#FFFF] py-[15px] px-[33px] text-16px font-bold uppercase flex items-center gap-2">
-                    <p>Arrange a Site Visit</p>
-                    <i class="ri-arrow-right-up-line text-black"></i>
-                </div>
-            </div>
-        </main>
+            <a
+              href="#form"
+              class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[12px] py-2 px-5 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 w-fit text-center mt-2"
+              style="
+                clip-path: polygon(
+                  14px 0,
+                  100% 0,
+                  calc(100% - 14px) 100%,
+                  0 100%
+                );
+              "
+            >
+              <span>REQUEST A FREE QUOTE</span>
+              <i
+                class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+              ></i>
+            </a>
+          </div>
+        </div>
 
+        <a
+          href="#form"
+          class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase md:text-[12.5px] text-[12px] md:tracking-wider md:py-3 py-2 md:px-6 px-3 md:flex hidden items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+          style="
+            clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+          "
+        >
+          <span>REQUEST A FREE QUOTE</span>
+          <i
+            class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+          ></i>
+        </a>
+      </nav>
+
+      <main
+        class="md:h-[80vh] md:px-[58px] px-[30px] md:pt-60 pt-15 md:pb-2 pb-20 relative z-1 flex flex-col md:gap-15 gap-5"
+      >
+        <div class="uppercase">
+          <h1
+            class="md:text-[47px] text-[31px] text-[#F9FA0E] font-bold max-w-4xl"
+          >
+            Commercial <span class="font-[300]">Demolition</span> & Strip-Out
+            Contractors
+          </h1>
+          <span class="text-white font-[300] md:text-[47px] text-[17px]">
+            Across London, Essex, Kent & Hertfordshire
+          </span>
+        </div>
+
+        <p
+          class="md:text-[18px] text-[14px] md:leading-[30px] max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent"
+        >
+          Stonebridge Demolition combines an established background in
+          commercial waste clearance with growing experience in demolition and
+          strip-out works.
+        </p>
+
+        <div class="flex items-center gap-5 text-white">
+          <i class="ri-phone-fill text-4xl"></i>
+          <div>
+            <p class="text-[12px] font-[400] uppercase">Call us</p>
+            <p class="md:text-[24.5px] font-bold">07405 438819</p>
+          </div>
+        </div>
+
+        <div class="flex md:flex-row flex-col items-center gap-4">
+          <a
+            href="#form"
+            class="mt-1 bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase md:text-[12.5px] text-[14px] tracking-wider py-3 md:px-6 px-8 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+            style="
+              clip-path: polygon(
+                14px 0,
+                100% 0,
+                calc(100% - 14px) 100%,
+                0 100%
+              );
+            "
+          >
+            <span>REQUEST A FREE QUOTE</span>
+            <i
+              class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+            ></i>
+          </a>
+          <a
+            href="#form"
+            class="mt-1 bg-[#FFFFFF] hover:bg-[#FFFFFF] text-black font-bold uppercase md:text-[12.5px] text-[14px] tracking-wider py-3 md:px-6 px-8 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+            style="
+              clip-path: polygon(
+                14px 0,
+                100% 0,
+                calc(100% - 14px) 100%,
+                0 100%
+              );
+            "
+          >
+            <span>Arrange a Site Visit</span>
+            <i
+              class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+            ></i>
+          </a>
+        </div>
+      </main>
     </section>
 
     <!--  -->
-    <section class="relative bg-white pt-[100px] flex justify-center overflow-hidden">
-        <p
-            class="uppercase text-[235px] font-[800] bg-linear-to-b from-[#EAEAA1] to-[#FFFFFF4A] bg-clip-text text-transparent">
-            stonebridge</p>
+    <section
+      class="relative bg-white md:pt-[100px] flex justify-center overflow-hidden"
+    >
+      <p
+        class="uppercase md:text-[235px] text-[55px] font-[800] md:bg-linear-to-b from-[#EAEAA1] to-[#FFFFFF4A] bg-linear-to-b from-[#F9FA0E] to-[#FFFFFF4A] bg-clip-text text-transparent"
+      >
+        stonebridge
+      </p>
 
-        <div
-            class="absolute bottom-0 w-full h-80 bg-linear-to-t from-white to-transparent flex justify-center items-center">
-            <!-- <img src="assets/background_design.png" alt=""> -->
-        </div>
+      <div
+        class="absolute bottom-0 w-full md:h-80 h-15 bg-linear-to-t from-white to-transparent flex justify-center items-center"
+      >
+        <!-- <img src="assets/background_design.png" alt=""> -->
+      </div>
     </section>
 
     <!-- about section -->
-    <section class="relative bg-[#0C0C0C] py-20">
+    <section class="relative bg-[#0C0C0C] md:py-20 pt-35 pb-10">
+      <div
+        class="flex md:flex-row flex-col justify-between items-start md:px-20 px-5 py-10"
+      >
+        <div
+          class="flex flex-col items-center md:text-start text-center py-8 gap-3"
+        >
+          <p
+            class="text-[#F9FA0E] md:text-[12px] text-[14px] uppercase font-[600] tracking-[2px]"
+          >
+            About Stonebridge
+          </p>
+          <p
+            class="md:text-[47px] text-[30px] font-semibold text-white md:leading-[48px] md:max-w-[30vw] uppercase md:pt-10"
+          >
+            Making space for <span class="font-[300]">better builds.</span>
+          </p>
 
-        <div class="flex justify-between items-start px-20 py-10">
-            <div>
-                <p class="text-[#F9FA0E] text-[12px] uppercase font-[600] tracking-[2px]">About Stonebridge</p>
-                <p class="text-[47px] font-semibold text-white leading-[48px] max-w-[30vw] uppercase pt-10">Making space
-                    for <span class="font-[300]">better builds.</span></p>
-                <div
-                    class="bg-[#F9FA0E] py-[15px] px-[33px] text-16px font-bold uppercase inline-flex items-center justify-center gap-2 mt-20">
-                    <p> Request a Free Quote</p>
-                    <i class="ri-arrow-right-up-line text-black"></i>
-                </div>
-            </div>
-            <div>
-                <p
-                    class="text-[18px] leading-[30px] max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent">
-                    Stonebridge Demolition combines an established background in commercial waste clearance with growing
-                    experience in demolition and strip-out works. Our projects include internal strip-outs, kitchen and
-                    bathroom rip-outs, small-structure demolition and associated site clearance. We support clients from
-                    the initial assessment through to the agreed works, including the safe removal and management of
-                    resulting waste.
-                </p>
-            </div>
+          <a
+            href="#form"
+            class="md:mt-5 bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[12.5px] tracking-wider py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+            style="
+              clip-path: polygon(
+                14px 0,
+                100% 0,
+                calc(100% - 14px) 100%,
+                0 100%
+              );
+            "
+          >
+            <span>REQUEST A FREE QUOTE</span>
+            <i
+              class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+            ></i>
+          </a>
         </div>
-
-        <div class="absolute -top-65 left-140 ">
-            <img src="assets/Stonebridge Construction Worker Back View 1.svg" alt="">
+        <div>
+          <p
+            class="md:text-[18px] text-[14px] md:leading-[30px] leading-[24px] max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent"
+          >
+            Stonebridge Demolition combines an established background in
+            commercial waste clearance with growing experience in demolition and
+            strip-out works. Our projects include internal strip-outs, kitchen
+            and bathroom rip-outs, small-structure demolition and associated
+            site clearance. We support clients from the initial assessment
+            through to the agreed works, including the safe removal and
+            management of resulting waste.
+          </p>
         </div>
+      </div>
 
-        <div class="flex flex-col justify-center items-center gap-3 text-white ">
-            <p class="uppercase italic text-[20px] font-[300] leading-[30px]">Coverage</p>
-            <p class="text-[20px] font-semibold italic">Across London, Essex, Kent & Hertfordshire</p>
-        </div>
+      <div class="absolute md:-top-65 -top-15 md:left-140 left-30">
+        <img
+          src="assets/Stonebridge Construction Worker Back View 1.svg"
+          alt=""
+          class="h-60 md:h-auto"
+        />
+      </div>
 
+      <div
+        class="flex flex-col justify-center items-center md:gap-3 gap-2 text-white text-center md:text-start"
+      >
+        <p class="uppercase italic text-[20px] font-[300] leading-[30px]">
+          Coverage
+        </p>
+        <p class="text-[20px] font-semibold italic uppercase">
+          London, Essex & South East
+        </p>
+      </div>
     </section>
 
     <!-- services -->
-    <section class="py-25 px-[60px]">
+    <section class="md:py-25 py-10 md:px-[60px] px-5">
+      <div class="text-center">
+        <p
+          class="md:text-[12px] text-[14px] text-[#939393] tracking-[2px] font-semibold md:mb-5 mb-2"
+        >
+          OUR DEMOLITION SERVICES
+        </p>
+        <p class="text-black md:text-[47px] text-[25px] font-[600] uppercase">
+          <span class="font-[300] italic"
+            >Professional
+            <span class="text-[#939393]">DEMOLITION</span>Services </span
+          ><br />
+          Across London, Essex, Kent & Hertfordshire
+        </p>
+      </div>
 
-        <div class="text-center ">
-            <p class="text-[12px] text-[#939393] tracking-[2px] font-semibold mb-5">OUR DEMOLITION SERVICES</p>
-            <p class="text-black text-[47px] font-[600] uppercase ">
-                <span class="font-[300] italic">Professional <span class="text-[#939393]">DEMOLITION</span>Services
-                </span><br>
-                Across London, Essex, Kent & Hertfordshire
-            </p>
+      <div
+        class="grid md:grid-cols-2 gap-x-[20px] gap-y-12 md:gap-y-40 md:py-20 py-5"
+      >
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/service1.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Commercial soft strip and internal demolition
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Removal of agreed non-structural internal elements ahead of
+                refurbishment, redevelopment and fit-out.
+              </p>
+            </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
+            </div>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-[20px] gap-y-40 py-20">
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/service1.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Commercial soft strip and internal demolition</p>
-                        <p class="text-[#4A4A4A]">Removal of agreed non-structural internal elements ahead of
-                            refurbishment, redevelopment and fit-out. </p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/services2.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Residential and small-structure demolition
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Garage demolition, kitchen and bathroom rip-outs and related
+                works.
+              </p>
             </div>
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/services2.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Residential and small-structure demolition</p>
-                        <p class="text-[#4A4A4A]">Garage demolition, kitchen and bathroom rip-outs and related works.
-                        </p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
             </div>
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/service3.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Office, retail and commercial interior strip-outs</p>
-                        <p class="text-[#4A4A4A]">Strip-out of commercial premises, including fixtures, fittings,
-                            partitions and other agreed elements</p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/services2.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Enabling works<br> and site preparation</p>
-                        <p class="text-[#4A4A4A]">Preparatory works to support demolition, refurbishment and
-                            redevelopment.</p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/service5.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Site clearance and resulting waste removal</p>
-                        <p class="text-[#4A4A4A]">Collection, transport and appropriate disposal of waste generated by
-                            the agreed works; arrangements depend on material type and quantity.</p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative h-[365px] rounded-[18px]">
-                <img src="assets/service6.jpg" alt="" class="h-full w-full object-cover object-center rounded-[18px]">
-                <div
-                    class=" absolute -bottom-20 left-14 max-w-xl px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] border border-[#C4C4C4] flex items-center justify-center gap-8">
-                    <div>
-                        <p class="text-[22px] font-bold uppercase">Commercial Demolition Project Assessment</p>
-                        <p class="text-[#4A4A4A]">Place last and do not promote as established experience. Before
-                            publishing as an available service, confirm project-specific competence, equipment,
-                            structural planning and delivery arrangements.</p>
-                    </div>
-                    <div>
-                        <i class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2 "></i>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
 
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/service3.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Office, retail and commercial interior strip-outs
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Strip-out of commercial premises, including fixtures, fittings,
+                partitions and other agreed elements
+              </p>
+            </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/services2.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Enabling works<br />
+                and site preparation
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Preparatory works to support demolition, refurbishment and
+                redevelopment.
+              </p>
+            </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/service5.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Site clearance and resulting waste removal
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Collection, transport and appropriate disposal of waste
+                generated by the agreed works; arrangements depend on material
+                type and quantity.
+              </p>
+            </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative flex flex-col md:block md:h-[365px] rounded-[18px]"
+        >
+          <img
+            src="assets/service6.jpg"
+            alt=""
+            class="w-full h-[192px] md:h-full object-cover object-center rounded-[18px]"
+          />
+          <div
+            class="md:absolute -bottom-20 left-14 max-w-xl md:px-6 py-4 bg-[#FFFFFFC9] backdrop-blur-sm rounded-[18px] md:border border-[#C4C4C4] flex items-center justify-between md:justify-center gap-4 md:gap-8"
+          >
+            <div>
+              <p class="md:text-[22px] text-[20px] font-bold uppercase">
+                Commercial Demolition Project Assessment
+              </p>
+              <p class="text-[#4A4A4A] md:text-[16px] text-[14px]">
+                Place last and do not promote as established experience. Before
+                publishing as an available service, confirm project-specific
+                competence, equipment, structural planning and delivery
+                arrangements.
+              </p>
+            </div>
+            <div class="shrink-0">
+              <i
+                class="ri-arrow-right-up-long-line bg-[#F9FA0E] text-2xl rounded-full p-2"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- why choose stonebridge -->
-    <section class="relative bg-[#0C0C0C] py-20 px-15 flex justify-center items-center gap-20 text-white">
-        <div class="absolute top-0 right-0 w-full h-full overflow-hidden">
-            <img src="assets/background_design.png" alt="" class="h-full w-full object-cover object-center z-0">
+    <!--why choose stonebridge-->
+    <section
+      class="relative bg-[#0C0C0C] md:py-20 py-10 md:px-15 px-5 flex md:flex-row flex-col justify-center items-center gap-20 text-white"
+    >
+      <div class="absolute top-0 right-0 w-full h-full overflow-hidden">
+        <img
+          src="assets/background_design.png"
+          alt=""
+          class="h-full w-full object-cover object-center z-0"
+        />
+      </div>
+
+      <div class="md:max-w-[660px] relative z-10">
+        <p class="uppercase md:text-[47px] text-[25px] font-[600] mb-8">
+          Why Choose <span class="text-[#F9FA0E] font-[300]">Stonebridge</span>
+        </p>
+
+        <div class="flex flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p class="md:text-[16px] text-[14px] leading-[26px]">
+              <span class="font-bold text-white"
+                >Responsive communication:</span
+              >
+              <span class="text-[#D1D5DB] font-[300]">
+                We aim to respond to new enquiries on the same working
+                day.</span
+              >
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p class="md:text-[16px] text-[14px] leading-[26px]">
+              <span class="font-bold text-white">Flexible scheduling:</span>
+              <span class="text-[#D1D5DB] font-[300]">
+                Urgent projects and weekend work can be accommodated where
+                agreed and subject to availability.</span
+              >
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p class="md:text-[16px] text-[14px] leading-[26px]">
+              <span class="font-bold text-white"
+                >Free site visits and quotations:</span
+              >
+              <span class="text-[#D1D5DB] font-[300]">
+                Discuss your project and obtain a quotation based on its scope
+                and requirements.</span
+              >
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p class="md:text-[16px] text-[14px] leading-[26px]">
+              <span class="font-bold text-white"
+                >Projects of different sizes:</span
+              >
+              <span class="text-[#D1D5DB] font-[300]">
+                We consider smaller residential works and larger commercial
+                projects</span
+              >
+            </p>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <svg
+              class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <p class="md:text-[16px] text-[14px] leading-[26px]">
+              <span class="font-bold text-white">Focused delivery:</span>
+              <span class="text-[#D1D5DB] font-[300]">
+                We carefully assess the projects we take on and aim to exceed
+                client expectations.</span
+              >
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="max-w-[660px] relative z-10">
-            <p class="uppercase text-[47px] font-[600] mb-8">Why Choose <span
-                    class="text-[#F9FA0E] font-[300]">Stonebridge</span></p>
-
-            <div class="flex flex-col gap-6">
-                <div class="flex items-start gap-3">
-                    <svg class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <p class="text-[16px] leading-[26px]">
-                        <span class="font-bold text-white">Responsive communication:</span>
-                        <span class="text-[#D1D5DB] font-[300]"> We aim to respond to new enquiries on the same working
-                            day.</span>
-                    </p>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <svg class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <p class="text-[16px] leading-[26px]">
-                        <span class="font-bold text-white">Flexible scheduling:</span>
-                        <span class="text-[#D1D5DB] font-[300]"> Urgent projects and weekend work can be accommodated
-                            where agreed and subject to availability.</span>
-                    </p>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <svg class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <p class="text-[16px] leading-[26px]">
-                        <span class="font-bold text-white">Free site visits and quotations:</span>
-                        <span class="text-[#D1D5DB] font-[300]"> Discuss your project and obtain a quotation based on
-                            its scope and requirements.</span>
-                    </p>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <svg class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <p class="text-[16px] leading-[26px]">
-                        <span class="font-bold text-white">Projects of different sizes:</span>
-                        <span class="text-[#D1D5DB] font-[300]"> We consider smaller residential works and larger
-                            commercial projects</span>
-                    </p>
-                </div>
-
-                <div class="flex items-start gap-3">
-                    <svg class="w-6 h-6 text-[#F9FA0E] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <p class="text-[16px] leading-[26px]">
-                        <span class="font-bold text-white">Focused delivery:</span>
-                        <span class="text-[#D1D5DB] font-[300]"> We carefully assess the projects we take on and aim to
-                            exceed client expectations.</span>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="relative z-1 h-[424px] w-[659px] rounded-[10px] overflow-hidden">
-            <img src="assets/service6.jpg" alt="" class="h-full w-full object-cover object-center ">
-        </div>
-
+      <div
+        class="relative z-1 md:h-[424px] h-[273px] md:w-[659px] w-[330px] rounded-[10px] overflow-hidden"
+      >
+        <img
+          src="assets/service6.jpg"
+          alt=""
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
     </section>
 
     <!--our process -->
     <section>
-
-        <div class="py-22 px-16 flex justify-between items-end">
-
-            <div>
-                <p class="text-[#939393] text-[12px] uppercase font-[600] tracking-[2px]">Our process</p>
-                <p class="text-[47px] font-semibold leading-[58px] max-w-[30vw] uppercase pt-5">How We Deliver <span
-                        class="font-[300] text-[#939393]">Your Project</span></p>
-                <p class="max-w-sm pt-5">From initial assessment to final handover, we manage each stage with safety,
-                    clarity and care.</p>
-            </div>
-
-            <div
-                class="bg-[#F9FA0E] py-[15px] px-[33px] text-16px font-bold uppercase inline-flex items-center justify-center gap-2 mt-10 cursor-pointer">
-                <p> Request a Free Quote</p>
-                <i class="ri-arrow-right-up-line text-black"></i>
-            </div>
-
+      <div
+        class="md:py-22 py-10 md:px-16 px-5 md:text-start text-center flex md:flex-row flex-col justify-between md:items-end items-center gap-5"
+      >
+        <div>
+          <p
+            class="text-[#939393] text-[12px] uppercase font-[600] tracking-[2px]"
+          >
+            Our process
+          </p>
+          <p
+            class="md:text-[47px] text-[25px] font-semibold md:leading-[58px] md:max-w-[30vw] uppercase md:pt-5 pt-2"
+          >
+            How We Deliver
+            <br /><span class="font-[300] text-[#939393]">Your Project</span>
+          </p>
+          <p class="max-w-sm md:pt-5 py-2 md:text-[16px] text-[14px]">
+            From initial assessment to final handover, we manage each stage with
+            safety, clarity and care.
+          </p>
         </div>
 
-        <div class="bg-[#0E0E0E] px-[60px] py-[60px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <a
+          href="#form"
+          class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[12.5px] tracking-wider py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+          style="
+            clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+          "
+        >
+          <span>REQUEST A FREE QUOTE</span>
+          <i
+            class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+          ></i>
+        </a>
+      </div>
 
-            <!-- 01 INITIAL ASSESSMENT / SITE VISIT -->
-            <div
-                class="bg-[#141414] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300">
-                <div>
-                    <div class="flex items-start justify-between">
-                        <span
-                            class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight">01</span>
-                        <img src="assets/handover1.svg" alt="">
-                    </div>
-
-                    <h3 class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8">
-                        INITIAL ASSESSMENT / SITE VISIT
-                    </h3>
-
-                    <p class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]">
-                        We assess the site, understand the requirements and identify the work involved before any works
-                        begin.
-                    </p>
-                </div>
-
-                <div class="mt-8">
-                    <div
-                        class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300">
-                        <i class="ri-arrow-right-long-line"></i>
-                    </div>
-                </div>
+      <div
+        class="bg-[#0E0E0E] md:px-[60px] px-5 py-[60px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
+      >
+        <!-- 01 INITIAL ASSESSMENT / SITE VISIT -->
+        <div
+          class="bg-[#151616] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300"
+        >
+          <div>
+            <div class="flex items-start justify-between">
+              <span
+                class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight"
+                >01</span
+              >
+              <img src="assets/handover1.svg" alt="" />
             </div>
 
-            <!-- 02 SCOPE & RAMS -->
+            <h3
+              class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8"
+            >
+              INITIAL ASSESSMENT / SITE VISIT
+            </h3>
+
+            <p
+              class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]"
+            >
+              We assess the site, understand the requirements and identify the
+              work involved before any works begin.
+            </p>
+          </div>
+
+          <div class="mt-8">
             <div
-                class="bg-[#141414] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300">
-                <div>
-                    <div class="flex items-start justify-between">
-                        <span
-                            class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight">02</span>
-                        <img src="assets/handover2.svg" alt="">
-                    </div>
-
-                    <h3 class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8">
-                        SCOPE & RAMS
-                    </h3>
-
-                    <p class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]">
-                        We agree the scope of works and prepare the necessary Risk Assessments and Method Statements
-                        (RAMS), ensuring the project is planned safely and clearly.
-                    </p>
-                </div>
-
-                <div class="mt-8">
-                    <div
-                        class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300">
-                        <i class="ri-arrow-right-long-line"></i>
-                    </div>
-                </div>
+              class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300"
+            >
+              <i class="ri-arrow-right-long-line"></i>
             </div>
-
-            <!-- 03 DEMOLITION / STRIP-OUT WORKS -->
-            <div
-                class="bg-[#141414] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300">
-                <div>
-                    <div class="flex items-start justify-between">
-                        <span
-                            class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight">03</span>
-                        <img src="assets/handover3.svg" alt="">
-                    </div>
-
-                    <h3 class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8">
-                        DEMOLITION / STRIP-OUT WORKS
-                    </h3>
-
-                    <p class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]">
-                        Our team carries out the agreed demolition, strip-out or rip-out works safely and efficiently,
-                        working to the agreed scope.
-                    </p>
-                </div>
-
-                <div class="mt-8">
-                    <div
-                        class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300">
-                        <i class="ri-arrow-right-long-line"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 04 WASTE & SITE CLEARANCE -->
-            <div
-                class="bg-[#141414] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300">
-                <div>
-                    <div class="flex items-start justify-between">
-                        <span
-                            class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight">04</span>
-                        <i class="ri-delete-bin-5-line text-[#F9FA0E] text-[28px]"></i>
-                    </div>
-
-                    <h3 class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8">
-                        WASTE & SITE CLEARANCE
-                    </h3>
-
-                    <p class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]">
-                        We remove the resulting waste and materials responsibly, leaving the working area clear, safe
-                        and ready for the next stage.
-                    </p>
-                </div>
-
-                <div class="mt-8">
-                    <div
-                        class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300">
-                        <i class="ri-arrow-right-long-line"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 05 HANDOVER -->
-            <div
-                class="bg-[#141414] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300">
-                <div>
-                    <div class="flex items-start justify-between">
-                        <span
-                            class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight">05</span>
-                        <img src="assets/handover5.svg" alt="">>
-                    </div>
-
-                    <h3 class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8">
-                        HANDOVER
-                    </h3>
-
-                    <p class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]">
-                        Once the works are complete, we carry out a final check and hand the site back in an agreed,
-                        clean and usable condition.
-                    </p>
-                </div>
-
-                <div class="mt-8">
-                    <div
-                        class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300">
-                        <i class="ri-arrow-right-long-line"></i>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
 
+        <!-- 02 SCOPE & RAMS -->
+        <div
+          class="bg-[#151616] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300"
+        >
+          <div>
+            <div class="flex items-start justify-between">
+              <span
+                class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight"
+                >02</span
+              >
+              <img src="assets/handover2.svg" alt="" />
+            </div>
+
+            <h3
+              class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8"
+            >
+              SCOPE & RAMS
+            </h3>
+
+            <p
+              class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]"
+            >
+              We agree the scope of works and prepare the necessary Risk
+              Assessments and Method Statements (RAMS), ensuring the project is
+              planned safely and clearly.
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <div
+              class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300"
+            >
+              <i class="ri-arrow-right-long-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 DEMOLITION / STRIP-OUT WORKS -->
+        <div
+          class="bg-[#151616] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300"
+        >
+          <div>
+            <div class="flex items-start justify-between">
+              <span
+                class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight"
+                >03</span
+              >
+              <img src="assets/handover3.svg" alt="" />
+            </div>
+
+            <h3
+              class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8"
+            >
+              DEMOLITION / STRIP-OUT WORKS
+            </h3>
+
+            <p
+              class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]"
+            >
+              Our team carries out the agreed demolition, strip-out or rip-out
+              works safely and efficiently, working to the agreed scope.
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <div
+              class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300"
+            >
+              <i class="ri-arrow-right-long-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 WASTE & SITE CLEARANCE -->
+        <div
+          class="bg-[#151616] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300"
+        >
+          <div>
+            <div class="flex items-start justify-between">
+              <span
+                class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight"
+                >04</span
+              >
+              <i class="ri-delete-bin-5-line text-[#F9FA0E] text-[28px]"></i>
+            </div>
+
+            <h3
+              class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8"
+            >
+              WASTE & SITE CLEARANCE
+            </h3>
+
+            <p
+              class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]"
+            >
+              We remove the resulting waste and materials responsibly, leaving
+              the working area clear, safe and ready for the next stage.
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <div
+              class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300"
+            >
+              <i class="ri-arrow-right-long-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 HANDOVER -->
+        <div
+          class="bg-[#151616] border border-[#222222] p-7 flex flex-col justify-between min-h-[355px] group hover:border-[#F9FA0E]/60 transition-all duration-300"
+        >
+          <div>
+            <div class="flex items-start justify-between">
+              <span
+                class="text-[28px] font-bold text-[#F9FA0E] border-b-2 border-[#F9FA0E] pb-1 leading-none tracking-tight"
+                >05</span
+              >
+              <img src="assets/handover5.svg" alt="" />
+            </div>
+
+            <h3
+              class="text-white font-bold text-[18px] leading-[24px] uppercase tracking-wide mt-8"
+            >
+              HANDOVER
+            </h3>
+
+            <p
+              class="text-[#9E9E9E] text-[13px] leading-[21px] mt-4 font-[350]"
+            >
+              Once the works are complete, we carry out a final check and hand
+              the site back in an agreed, clean and usable condition.
+            </p>
+          </div>
+
+          <div class="mt-8">
+            <div
+              class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center text-black cursor-pointer group-hover:scale-105 group-hover:translate-x-1 transition-all duration-300"
+            >
+              <i class="ri-arrow-right-long-line"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Work in action -->
-    <section class="">
-        <div class="text-center pt-20 pb-30">
-            <p class="text-[#939393] text-[12px] uppercase font-[600] tracking-[2px]">Recent projects</p>
-            <p class="text-[47px] font-semibold leading-[58px]  uppercase pt-5">our work
-                <br><span class="font-[300] ">in action</span>
-            </p>
-            <p class="pt-5 max-w-xl mx-auto text-[#4A5056]">A look at the transformation process — from the initial site
-                condition,
-                through to demolition and strip-out, and a clean, cleared space ready for what's next.</p>
-        </div>
+    <section>
+      <div class="text-center md:pt-20 pt-10 md:pb-30 pb-10">
+        <p
+          class="text-[#939393] md:text-[12px] text-[14px] uppercase font-[600] tracking-[2px]"
+        >
+          Recent projects
+        </p>
+        <p
+          class="md:text-[47px] text-[25px] font-semibold md:leading-[58px] uppercase md:pt-5 pt-3"
+        >
+          our work <br /><span class="font-[300]">in action</span>
+        </p>
+        <p class="md:pt-5 pt-3 md:max-w-xl mx-auto text-[#4A5056] text-[14px]">
+          A look at the transformation process — from the initial site
+          condition, through to demolition and strip-out, and a clean, cleared
+          space ready for what's next.
+        </p>
+      </div>
 
-        <div class="relative pb-20">
-
-            <div class="relative px-20 flex justify-center items-center gap-[35px] z-1">
-                <div>
-                    <div class="relative overflow-hidden rounded-[10px]">
-                        <img src="assets/service1.jpg" alt="Initial Site Condition" class="w-full rounded-[10px] block">
-                        <span class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]" style="clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);">
-                            BEFORE
-                        </span>
-                    </div>
-
-                    <div class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-fit">
-                        <h2 class="text-[47px] leading-none font-bold tracking-tight">
-                            01
-                        </h2>
-                        <div class="w-[1px] h-[42px] bg-[#FFFFFF]"></div>
-                        <div class="flex flex-col gap-2">
-                            <h3 class="text-[20px] leading-[14px] font-bold uppercase">
-                                Initial Site Condition
-                            </h3>
-    
-                            <p class="text-[16px] leading-[18px] text-white max-w-[250px]">
-                                We visit the site, assess the space and identify
-                                the scope of work.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="relative overflow-hidden rounded-[10px]">
-                        <img src="assets/service1.jpg" alt="Demolition / Strip-out Works" class="w-full rounded-[10px] block">
-                        <span class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]" style="clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);">
-                            DURING
-                        </span>
-                    </div>
-
-                   <div class="flex items-start gap-5 bg-black text-white  pt-8 w-fit">
-                        <h2 class="text-[47px] leading-none font-bold tracking-tight">
-                            02
-                        </h2>
-                        <div class="w-[1px] h-[42px] bg-[#FFFFFF]"></div>
-                        <div class="flex flex-col gap-2">
-                            <h3 class="text-[20px] leading-[18px] font-bold uppercase">
-                                DEMOLITION / STRIP-OUT WORKS
-                            </h3>
-    
-                            <p class="text-[16px] leading-[18px] text-white max-w-[300px]">
-                               Our team carries out the agreed works safely and efficiently, working to the agreed scope.
-                            </p>
-                        </div>
-                    </div>
-    
-                </div>
-
-                <div>
-                    <div class="relative overflow-hidden rounded-[10px]">
-                        <img src="assets/service1.jpg" alt="Site Clearance & Handover" class="w-full rounded-[10px] block">
-                        <span class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]" style="clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);">
-                            AFTER
-                        </span>
-                    </div>
-
-                   <div class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-fit">
-                        <h2 class="text-[47px] leading-none font-bold tracking-tight">
-                            03
-                        </h2>
-                        <div class="w-[1px] h-[42px] bg-[#FFFFFF]"></div>
-                        <div class="flex flex-col gap-2">
-                            <h3 class="text-[20px] leading-[18px] font-bold uppercase">
-                               SITE CLEARANCE & HANDOVER
-                            </h3>
-    
-                            <p class="text-[16px] leading-[18px] text-white max-w-[250px]">
-                                We remove all waste and materials, leaving the space clean and ready for the next stage.
-                            </p>
-                        </div>
-                    </div>
-    
-                </div>
-
+      <div class="swiper projectsSwiper relative pb-20 px-5 md:px-[60px]">
+        <div class="swiper-wrapper pb-15">
+          <div class="swiper-slide">
+            <div
+              class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]"
+            >
+              <img
+                src="assets/before.jpg"
+                alt="Initial Site Condition"
+                class="w-full h-full object-cover rounded-[10px] block"
+              />
+              <span
+                class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]"
+                style="
+                  clip-path: polygon(
+                    0 0,
+                    calc(100% - 12px) 0,
+                    100% 100%,
+                    0 100%
+                  );
+                "
+              >
+                BEFORE
+              </span>
             </div>
 
-            <div class="bg-black absolute bottom-0 w-full h-100 z-0 ">
+            <div
+              class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full"
+            >
+              <h2
+                class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight"
+              >
+                01
+              </h2>
+              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
+              <div class="flex flex-col gap-2 flex-1">
+                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+                  Initial Site Condition
+                </h3>
 
+                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                  We visit the site, assess the space and identify the scope of
+                  work.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]"
+            >
+              <img
+                src="assets/service1.jpg"
+                alt="Demolition / Strip-out Works"
+                class="w-full h-full object-cover rounded-[10px] block"
+              />
+              <span
+                class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]"
+                style="
+                  clip-path: polygon(
+                    0 0,
+                    calc(100% - 12px) 0,
+                    100% 100%,
+                    0 100%
+                  );
+                "
+              >
+                DURING
+              </span>
+            </div>
+
+            <div
+              class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full"
+            >
+              <h2
+                class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight"
+              >
+                02
+              </h2>
+              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
+              <div class="flex flex-col gap-2 flex-1">
+                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+                  DEMOLITION / STRIP-OUT WORKS
+                </h3>
+
+                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                  Our team carries out the agreed works safely and efficiently,
+                  working to the agreed scope.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]"
+            >
+              <img
+                src="assets/service5.jpg"
+                alt="Site Clearance & Handover"
+                class="w-full h-full object-cover rounded-[10px] block"
+              />
+              <span
+                class="absolute bottom-0 left-0 bg-[#F9FA0E] text-black text-[12px] font-bold tracking-wider uppercase pl-4 pr-6 py-1 rounded-bl-[10px] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_100%,0_100%)]"
+                style="
+                  clip-path: polygon(
+                    0 0,
+                    calc(100% - 12px) 0,
+                    100% 100%,
+                    0 100%
+                  );
+                "
+              >
+                AFTER
+              </span>
+            </div>
+
+            <div
+              class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full"
+            >
+              <h2
+                class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight"
+              >
+                03
+              </h2>
+              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
+              <div class="flex flex-col gap-2 flex-1">
+                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+                  SITE CLEARANCE & HANDOVER
+                </h3>
+
+                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                  We remove all waste and materials, leaving the space clean and
+                  ready for the next stage.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Background decoration -->
+        <div
+          class="pointer-events-none absolute bottom-0 left-0 w-full h-70 bg-black z-0"
+        ></div>
+      </div>
     </section>
 
-</body>
+    <!--form -->
+    <section class="py-20 px-6 sm:px-10">
+      <div
+        class="flex flex-col lg:flex-row justify-between items-start gap-12 max-w-[1340px] mx-auto"
+      >
+        <div
+          class="max-w-[455px] shrink-0 md:text-start text-center flex flex-col md:items-start items-center gap-2"
+        >
+          <p
+            class="text-[#939393] text-[12px] uppercase font-[600] tracking-[2px]"
+          >
+            Request a quotation
+          </p>
+          <p class="md:text-[47px] text-[25px] font-semibold md:leading-[58px]">
+            Request a<span class="font-[300] text-[#939393]"> Demolition</span>
+            Quotation
+          </p>
+          <p class="text-[14px] md:text-[16px]">
+            Tell us about your project and we'll come back to you with next
+            step.
+          </p>
+          <p>
+            <span class="font-bold text-[14px]">Urgent? Call </span
+            ><a href="tel:+447405438819" class="text-[#434343] font-[400]">
+              07405438819</a
+            >
+          </p>
+          <a
+            href="mailto:[EMAIL_ADDRESS]"
+            class="text-[#434343] font-[400] mt-4"
+            >info@stonebridgedemolition.com</a
+          >
 
+          <div class="flex items-center gap-1 mt-5">
+            <img src="assets/map-pin.png" alt="map-pin" class="md:h-20 h-10" />
+            <p class="uppercase font-bold">View on google map</p>
+          </div>
+        </div>
+
+        <div id="form" class="w-full lg:max-w-[800px]">
+          <form class="space-y-5">
+            <!-- Row 1: Full name & Company name -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  for="fullName"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Full name<span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  class="w-full border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  for="companyName"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Company name
+                </label>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  class="w-full border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Row 2: Telephone number & Email address -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  for="telephone"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Telephone number<span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  required
+                  class="w-full border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Email address<span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Row 3: Site postcode/location & Service required -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  for="location"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Site postcode/location<span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  class="w-full border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  for="service"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Service required<span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    class="w-full appearance-none border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors pr-10 cursor-pointer"
+                  >
+                    <option value="" disabled selected hidden></option>
+                    <option value="Commercial Demolition">
+                      Commercial Demolition
+                    </option>
+                    <option value="Residential Demolition">
+                      Residential Demolition
+                    </option>
+                    <option value="Industrial Demolition">
+                      Industrial Demolition
+                    </option>
+                    <option value="Asbestos Removal">Asbestos Removal</option>
+                    <option value="Strip Out">Strip Out</option>
+                    <option value="Site Clearance">Site Clearance</option>
+                    <option value="Groundworks">
+                      Groundworks & Excavation
+                    </option>
+                  </select>
+                  <i
+                    class="ri-arrow-down-s-line absolute right-3 top-1/2 -translate-y-1/2 text-gray-800 text-lg pointer-events-none"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Brief project description -->
+            <div>
+              <label
+                for="description"
+                class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+              >
+                Brief project description<span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                required
+                class="w-full border border-gray-300 rounded-[4px] p-3.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors resize-none"
+              ></textarea>
+              <p class="text-[12px] text-gray-500 mt-1">
+                Include the type of building, approximate size and any access
+                restrictions.
+              </p>
+            </div>
+
+            <!-- Row 5: Upload & Estimated project budget -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+              <div>
+                <label
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Photographs/drawings upload
+                </label>
+                <div
+                  class="relative border-2 border-dashed border-gray-300 rounded-[4px] bg-[#EEEEEE] p-2 flex items-center gap-3 cursor-pointer"
+                >
+                  <input
+                    type="file"
+                    id="fileUpload"
+                    name="fileUpload"
+                    multiple
+                    accept=".jpg,.jpeg,.png,.heic,.pdf,.dwg,.dxf"
+                    class="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
+                    onchange="
+                      document.getElementById('fileNameDisplay').textContent =
+                        this.files.length
+                          ? this.files.length === 1
+                            ? this.files[0].name
+                            : this.files.length + ' files selected'
+                          : 'no file choosen'
+                    "
+                  />
+                  <span
+                    class="bg-white border border-gray-300 text-black text-[12px] font-medium px-3 py-1.5 rounded-[4px] shadow-2xs pointer-events-none"
+                  >
+                    Choose files
+                  </span>
+                  <span
+                    id="fileNameDisplay"
+                    class="text-[12px] text-gray-600 pointer-events-none truncate"
+                  >
+                    no file choosen
+                  </span>
+                </div>
+                <p class="text-[11px] text-gray-500 mt-1">
+                  Optional. JPG, PNG, HEIC, PDF, DWG or DXF. Up to 5 files, 5 MB
+                  each.
+                </p>
+              </div>
+
+              <div>
+                <label
+                  for="budget"
+                  class="block text-[14px] font-semibold text-gray-900 mb-1.5"
+                >
+                  Estimated project budget
+                </label>
+                <div class="relative">
+                  <select
+                    id="budget"
+                    name="budget"
+                    class="w-full appearance-none border border-gray-300 rounded-[4px] px-3.5 py-2.5 text-[14px] text-gray-800 bg-white focus:outline-none focus:border-black transition-colors pr-10 cursor-pointer"
+                  >
+                    <option value="prefer_not_to_say" selected>
+                      Prefer not to say
+                    </option>
+                    <option value="under_5k">Under £5,000</option>
+                    <option value="5k_15k">£5,000 - £15,000</option>
+                    <option value="15k_50k">£15,000 - £50,000</option>
+                    <option value="50k_100k">£50,000 - £100,000</option>
+                    <option value="100k_plus">£100,000+</option>
+                  </select>
+                  <i
+                    class="ri-arrow-down-s-line absolute right-3 top-1/2 -translate-y-1/2 text-gray-800 text-lg pointer-events-none"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 6: Privacy Notice -->
+            <div
+              class="bg-[#F6F99E] border border-[#ACAD16] border-l-3 p-4 rounded-[2px] mt-6"
+            >
+              <p class="text-[14px] font-bold text-gray-900 mb-1.5">
+                Privacy Notice
+              </p>
+              <p class="text-[12px] leading-[18px] text-[#2c2f06]">
+                Stonebridge Demolition will use the details you provide only to
+                respond to your enquiry and prepare a quotation. We will not
+                sell your data or share it with third parties for marketing. We
+                keep enquiry records only as long as needed for that purpose or
+                as required by law. You can ask to see, correct or delete your
+                data at any time by emailing
+                <a
+                  href="mailto:info@stonebridgedemolition.com"
+                  class="underline hover:text-black"
+                  >info@stonebridgedemolition.com</a
+                >
+              </p>
+            </div>
+
+            <!-- Row 7: Checkbox consent -->
+            <div class="flex items-start gap-3 pt-1">
+              <input
+                type="checkbox"
+                id="privacyConsent"
+                name="privacyConsent"
+                required
+                class="w-5 h-5 rounded border-gray-300 text-black focus:ring-0 accent-black cursor-pointer shrink-0 mt-0.5"
+              />
+              <label
+                for="privacyConsent"
+                class="text-[13px] text-gray-700 cursor-pointer leading-tight"
+              >
+                I have read the privacy notice and agree to Stonebridge
+                Demolition contacting me about this enquiry.
+              </label>
+            </div>
+
+            <!-- Row 8: Submit button -->
+            <div class="pt-4 flex items-center justify-center md:justify-start">
+              <button
+                type="submit"
+                class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[14px] tracking-wider py-3.5 px-8 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(16px_0,100%_0,calc(100%-16px)_100%,0_100%)]"
+                style="
+                  clip-path: polygon(
+                    16px 0,
+                    100% 0,
+                    calc(100% - 16px) 100%,
+                    0 100%
+                  );
+                "
+              >
+                <span>SEND ME ENQUIRY</span>
+                <i
+                  class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"
+                ></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="relative bg-black text-white pt-16 pb-8 overflow-hidden">
+      <div class="mx-auto">
+        <!-- Main Footer Grid (4 Columns) -->
+        <div
+          class="sm:px-10 lg:px-15 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1.1fr_1.3fr_1.1fr] gap-10 lg:gap-10 z-10 md:text-start text-center"
+        >
+          <!-- Column 1: Logo, Description & Socials -->
+          <div class="flex flex-col items-center md:items-start">
+            <img
+              src="assets/STONE_BRIDGE_1.svg"
+              alt="Stonebridge Demolition"
+              class="w-[245px] h-[53px] object-contain"
+            />
+            <p
+              class="text-[16px] text-[#939393] font-[400] leading-relaxed max-w-[310px] mt-4"
+            >
+              We support clients from initial assessment through to the agreed
+              demolition works and management of the resulting waste.
+            </p>
+
+            <div class="flex items-center gap-3 mt-8">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center hover:opacity-90 transition-opacity"
+                aria-label="Instagram"
+              >
+                <i class="ri-instagram-line text-black text-[19px]"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center hover:opacity-90 transition-opacity"
+                aria-label="Facebook"
+              >
+                <i class="ri-facebook-fill text-black text-[19px]"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-[#F9FA0E] flex items-center justify-center hover:opacity-90 transition-opacity"
+                aria-label="Twitter"
+              >
+                <i class="ri-twitter-x-line text-black text-[17px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Contact Us -->
+          <div class="flex flex-col items-start">
+            <p
+              class="text-[13px] uppercase font-bold tracking-[2px] text-[#434343] mb-6"
+            >
+              Contact Us
+            </p>
+            <div class="w-full h-[1px] bg-[#27272A] mb-4"></div>
+            <div
+              class="flex flex-col gap-5 text-[14px] text-[#939393] font-light"
+            >
+              <a
+                href="tel:07405438819"
+                class="flex items-center gap-3 hover:text-white transition-colors"
+              >
+                <i class="ri-phone-fill text-[#F9FA0E] text-[17px]"></i>
+                <span>07405 438819</span>
+              </a>
+              <a
+                href="mailto:info@stonebridgedemolition.com"
+                class="flex items-center gap-3 hover:text-white transition-colors"
+              >
+                <i class="ri-mail-fill text-[#F9FA0E] text-[17px]"></i>
+                <span>info@stonebridgedemolition.com</span>
+              </a>
+              <div class="flex items-start gap-3">
+                <i
+                  class="ri-map-pin-2-fill text-[#F9FA0E] text-[18px] shrink-0 mt-0.5"
+                ></i>
+                <p class="leading-relaxed">
+                  Office 6305, 58 Peregrine Road,<br />
+                  Hainault, Ilford, Essex, IG6 3SZ
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Services -->
+          <div class="flex flex-col items-start justify-start text-left">
+            <p
+              class="text-[13px] uppercase font-bold tracking-[2px] text-[#434343] mb-6"
+            >
+              Services
+            </p>
+            <div class="w-full h-[1px] bg-[#27272A] mb-4"></div>
+            <div
+              class="flex flex-col gap-3 text-[16px] text-[#939393] font-light"
+            >
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Commercial soft strip and internal demolition
+              </a>
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Residential and small-structure demolition
+              </a>
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Office, retail and commercial interior strip-outs
+              </a>
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Enabling works and site preparation
+              </a>
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Site clearance and resulting waste removal
+              </a>
+              <a
+                href="#"
+                class="hover:text-white transition-colors leading-snug"
+              >
+                Larger commercial demolition enquiries
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Contact Hours & CTA Buttons -->
+          <div class="flex flex-col items-start text-left">
+            <p
+              class="text-[13px] uppercase font-bold tracking-[2px] text-[#434343] mb-6"
+            >
+              Contact Hours
+            </p>
+            <div class="w-full h-[1px] bg-[#27272A] mb-4"></div>
+            <p class="text-[13.5px] text-[#939393] mb-6 font-light">
+              Monday-Saturday, 8am-6pm
+            </p>
+
+            <div class="flex flex-col gap-3">
+              <a
+                href="#form"
+                class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[12.5px] tracking-wider py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-full text-center"
+                style="
+                  clip-path: polygon(
+                    14px 0,
+                    100% 0,
+                    calc(100% - 14px) 100%,
+                    0 100%
+                  );
+                "
+              >
+                <span>REQUEST A FREE QUOTE</span>
+                <i class="ri-arrow-right-circle-line text-[18px]"></i>
+              </a>
+
+              <a
+                href="#form"
+                class="bg-white hover:bg-gray-100 text-black font-bold uppercase text-[12.5px] tracking-wider py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-full text-center"
+                style="
+                  clip-path: polygon(
+                    14px 0,
+                    100% 0,
+                    calc(100% - 14px) 100%,
+                    0 100%
+                  );
+                "
+              >
+                <span>ARRANGE A SITE VISIT</span>
+                <i class="ri-arrow-right-circle-line text-[18px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large Watermark Text Across Bottom -->
+        <div
+          class="overflow-hidden pointer-events-none select-none flex justify-center md:mt-14 z-0 py-8"
+        >
+          <p
+            class="uppercase text-[50px] sm:text-[160px] lg:text-[220px] font-[900] tracking-wider bg-linear-to-b from-[#1212122E] to-[#FFFFFF4A] leading-none bg-clip-text text-transparent"
+          >
+            stonebridge
+          </p>
+        </div>
+        <div class="absolute md:bottom-0 bottom-10 z-10">
+          <div class="flex items-center gap-5">
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+            <img
+              src="assets/background_design.png"
+              alt=""
+              class="md:h-50 h-20"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/9971502482"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-[9999] group flex items-center gap-3"
+      aria-label="Chat on WhatsApp"
+    >
+      <!-- Tooltip -->
+      <span
+        class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black text-white text-[12px] font-semibold px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg pointer-events-none"
+      >
+        Chat on WhatsApp
+      </span>
+
+      <!-- Button -->
+      <div class="relative">
+        <!-- Pulse ring -->
+        <span
+          class="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping"
+        ></span>
+        <div
+          class="relative w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] rounded-full flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110"
+        >
+          <i class="ri-whatsapp-line text-white text-[28px]"></i>
+        </div>
+      </div>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
 </html>
