@@ -13,14 +13,38 @@ const projectsSwiper = new Swiper(".projectsSwiper", {
   },
 
   breakpoints: {
-    // Desktop / tablet: autoplay disabled
+    // Tablet: 768px
     768: {
       slidesPerView: 3,
-      spaceBetween: 50,
+      spaceBetween: 24,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
       allowTouchMove: false,
       simulateTouch: false,
       autoplay: false,
     },
+
+    // Desktop: 1024px
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 32,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+      allowTouchMove: false,
+      simulateTouch: false,
+      autoplay: false,
+    },
+
+    // Large desktop: 1280px+
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+      allowTouchMove: false,
+      simulateTouch: false,
+      autoplay: false,
+    }
   },
 });
 

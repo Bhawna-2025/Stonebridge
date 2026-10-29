@@ -23,14 +23,15 @@
 
 <body class="relative font-['Inter_Tight'] ">
   <!-- nav and hero section -->
-  <section class="relative bg-[url('assets/secPageHeroImg.jpg')] bg-cover bg-center lg:h-[990px] overflow-hidden">
+  <section class="relative bg-[url('assets/secPageHeroImg.jpg')] bg-cover bg-center overflow-hidden">
     <div class="absolute top-0 left-0 h-full w-full bg-linear-to-r from-[#000000eb] to-white-500 z-0"></div>
 
     <!-- navigation bar -->
     <nav class="relative z-10  border-b-2 border-[#979797]">
-      <div class="max-w-[1440px] mx-auto flex justify-between items-center gap-6 px-6 h-[110px]">
-        <div class="md:flex hidden">
-          <img src="assets/logo2.png" alt="" class="lg:h-[110px] h-[80px]" />
+      <div
+        class="max-w-[1440px] mx-auto flex justify-between items-center md:gap-3 lg:gap-6 px-4 lg:px-6 md:h-[95px] lg:h-[110px] h-[80px]">
+        <div class="md:flex hidden shrink-0">
+          <img src="assets/logo2.png" alt="" class="lg:h-[110px] md:h-[75px] h-[80px]" />
         </div>
 
         <div class="flex justify-between w-full items-center md:hidden pr-5">
@@ -38,28 +39,28 @@
           <i class="ri-menu-line text-white text-[20px]" id="menu-btn"></i>
         </div>
 
-        <div class="md:flex justify-center items-center md:gap-[24px] text-white text-[14px] font-[700] hidden">
-          <a href="#" class="cursore-pointer">HOME</a>
+        <div class="md:flex justify-center items-center md:gap-2.5 lg:gap-[24px] text-white md:text-[11px] lg:text-[14px] font-[700] whitespace-nowrap hidden shrink-0">
+          <a href="#" class="cursor-pointer hover:text-[#F9FA0E] transition-colors">HOME</a>
 
-          <div class="flex items-center gap-1 cursor-pointer">
+          <div class="flex items-center gap-0.5 cursor-pointer hover:text-[#F9FA0E] transition-colors">
             <a href="#">OUR SERVICES</a>
-            <i class="ri-arrow-down-s-line text-[24px]"></i>
+            <i class="ri-arrow-down-s-line md:text-[16px] lg:text-[24px]"></i>
           </div>
 
-          <a href="#" class="cursore-pointer">WHO WE ARE</a>
+          <a href="#" class="cursor-pointer hover:text-[#F9FA0E] transition-colors">WHO WE ARE</a>
 
-          <a href="#" class="cursore-pointer">CAREERS</a>
+          <a href="#" class="cursor-pointer hover:text-[#F9FA0E] transition-colors">CAREERS</a>
 
-          <a href="#" class="cursore-pointer">GET IN TOUCH</a>
+          <a href="#" class="cursor-pointer hover:text-[#F9FA0E] transition-colors">GET IN TOUCH</a>
         </div>
 
         <a href="#form"
-          class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase md:text-[12.5px] text-[12px] md:tracking-wider md:py-3 py-2 md:px-6 px-3 md:flex hidden items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+          class="bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase md:text-[11px] lg:text-[12.5px] text-[12px] md:tracking-normal lg:tracking-wider md:py-2.5 lg:py-3 py-2 md:px-3.5 lg:px-6 px-3 md:flex hidden items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center shrink-0"
           style="
             clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
           ">
           <span>REQUEST A FREE QUOTE</span>
-          <i class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"></i>
+          <i class="ri-arrow-right-up-line md:text-[15px] lg:text-[19px] text-[19px] leading-none border-2 rounded-full"></i>
         </a>
       </div>
       <!-- hidden menu bar -->
@@ -98,13 +99,13 @@
     </nav>
 
     <main
-      class="relative z-9 max-w-[1440px] mx-auto md:h-[80vh] md:px-[58px] px-[30px] md:pt-60 pt-1 md:pb-2 pb-20 flex flex-col md:gap-15 gap-5 ">
+      class="relative z-9 max-w-[1440px] mx-auto md:px-[58px] px-[30px] pt-12 md:pt-16 lg:pt-24 pb-16 md:pb-20 lg:pb-28 flex flex-col lg:gap-12 md:gap-8 gap-5 md:items-start items-center">
       <div class="uppercase">
-        <h1 class="md:text-[47px] text-[31px] text-[#F9FA0E] font-bold max-w-4xl">
+        <h1 class="lg:text-[47px] md:text-[31px] text-[17px] text-[#F9FA0E] font-bold max-w-4xl">
           Commercial <span class="font-[300]">Demolition</span> & Strip-Out
           Contractors
         </h1>
-        <span class="text-white font-[300] md:text-[47px] text-[17px]">
+        <span class="text-white font-[300] lg:text-[47px] md:text-[31px] text-[17px]">
           Across London, Essex, Kent & Hertfordshire
         </span>
       </div>
@@ -157,15 +158,13 @@
   </section>
 
   <!--  -->
-  <section class="relative bg-white md:pt-[100px] md:pt-10 flex justify-center overflow-hidden">
-
-    <!-- Centered container -->
+  <section class="relative bg-white pt-6 md:pt-10 lg:pt-[100px] flex justify-center overflow-hidden">
 
     <!-- Full-width watermark -->
     <div class="pointer-events-none select-none
-            relative w-screen  
+            relative w-full  
             flex justify-center overflow-hidden
-            mt-14">
+            mt-6 md:mt-8 lg:mt-14">
 
       <p class="uppercase whitespace-nowrap
             text-[15vw] font-[900] tracking-wide leading-none
@@ -179,7 +178,7 @@
     <!--  -->
     <!-- Bottom white gradient overlay -->
     <div class="absolute bottom-0 left-0 w-full
-              md:h-80 h-15
+              h-15 md:h-24 lg:h-80
               bg-linear-to-t from-white to-transparent
               flex justify-center items-center">
     </div>
@@ -190,22 +189,27 @@
   <!-- about section -->
   <section class="bg-[#0C0C0C] ">
 
-    <div class=" max-w-[1440px] w-full md:py-20 pt-35 pb-10 mx-auto ">
-      <div class="relative w-full">
+    <div class=" max-w-[1440px] w-full md:py-16 lg:py-20 pt-35 pb-10 mx-auto ">
 
-        <div class="flex md:flex-row flex-col justify-between md:px-20 px-5 md:py-10 py-5">
+      <div class="relative w-full ">
 
-          <div class="flex flex-col  md:items-start items-center md:text-start text-center  py-8 gap-3 md:max-w-1/3 w-full">
-            <p class="text-[#F9FA0E] md:text-[12px] text-[14px] uppercase font-[600] trackin/g-[2px]">
+        <div class="absolute lg:-top-70 md:-top-36 -top-50 left-1/2 -translate-x-1/2 pointer-events-none">
+          <img src="assets/Stonebridge Construction Worker Back View 1.svg" alt="" class="h-50 md:h-[350px] lg:h-[600px]">
+        </div>
+
+        <div class="flex md:flex-row flex-col justify-between md:px-8 lg:px-20 px-5 md:py-8 lg:py-10 py-5">
+
+          <div class="flex flex-col md:items-start items-center md:text-start text-center py-4 md:py-6 lg:py-8 gap-2 md:gap-3 md:w-[220px] lg:w-auto lg:max-w-1/3 w-full shrink-0 z-10">
+            <p class="text-[#F9FA0E] md:text-[11px] lg:text-[12px] text-[14px] uppercase font-[600] tracking-[2px]">
               About Stonebridge
             </p>
             <p
-              class="md:text-[47px] text-[30px] font-semibold text-white md:leading-[48px] md:max-w-[30vw] uppercase md:pt-10">
+              class="md:text-[26px] lg:text-[47px] text-[30px] font-semibold text-white md:leading-[30px] lg:leading-[48px] leading-[36px] uppercase md:pt-3 lg:pt-10">
               Making space for <span class="font-[300]">better builds.</span>
             </p>
 
             <a href="#form"
-              class="md:mt-5 bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase text-[12.5px] tracking-wider py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
+              class="md:mt-3 lg:mt-5 bg-[#F9FA0E] hover:bg-[#ebec05] text-black font-bold uppercase md:text-[11px] lg:text-[12.5px] text-[12.5px] md:tracking-normal lg:tracking-wider py-2.5 lg:py-3 px-4 lg:px-6 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 [clip-path:polygon(14px_0,100%_0,calc(100%-14px)_100%,0_100%)] w-fit text-center"
               style="
                         clip-path: polygon(
                           14px 0,
@@ -215,15 +219,15 @@
                         );
                       ">
               <span>REQUEST A FREE QUOTE</span>
-              <i class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"></i>
+              <i class="ri-arrow-right-up-line md:text-[16px] lg:text-[19px] text-[19px] leading-none border-2 rounded-full"></i>
             </a>
 
           </div>
 
 
-          <div>
+          <div class="md:w-[220px] lg:w-auto shrink-0 z-10 flex items-center">
             <p
-              class="md:text-[18px] text-[14px] md:leading-[30px] leading-[24px] max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent">
+              class="md:text-[12.5px] lg:text-[18px] text-[14px] md:leading-[19px] lg:leading-[30px] leading-[24px] md:max-w-[220px] lg:max-w-md bg-linear-to-t from-[#666666] to-white bg-clip-text text-transparent md:text-start text-center">
               Stonebridge Demolition combines an established background in
               commercial waste clearance with growing experience in demolition and
               strip-out works. Our projects include internal strip-outs, kitchen
@@ -236,18 +240,14 @@
 
         </div>
 
-        <div class="absolute md:-top-70 -top-50 md:left-120 left-30">
-          <img src="assets/Stonebridge Construction Worker Back View 1.svg" alt="" class="h-50 md:h-[600px]">
-        </div>
-
       </div>
 
 
-      <div class="flex flex-col justify-center items-center md:gap-3 gap-2 text-white text-center md:text-start">
-        <p class="uppercase italic text-[20px] font-[300] leading-[30px]">
+      <div class="flex flex-col justify-center items-center md:gap-2 lg:gap-3 gap-2 text-white text-center md:pt-4 lg:pt-0">
+        <p class="uppercase italic md:text-[16px] lg:text-[20px] text-[20px] font-[300] md:leading-[24px] lg:leading-[30px]">
           Coverage
         </p>
-        <p class="text-[20px] font-semibold italic uppercase">
+        <p class="md:text-[16px] lg:text-[20px] text-[20px] font-semibold italic uppercase">
           London, Essex & South East
         </p>
       </div>
@@ -257,7 +257,8 @@
   </section>
 
   <!-- services -->
-  <section class="md:py-25 py-10 md:px-[60px] px-5">
+  <section class="lg:py-25 lg:py-20 md:pt-15  py-10 md:px-[60px] px-5">
+
     <div class="text-center">
       <p class="md:text-[12px] text-[14px] text-[#939393] tracking-[2px] font-semibold md:mb-5 mb-2">
         OUR DEMOLITION SERVICES
@@ -270,7 +271,7 @@
     </div>
 
     <div class="max-w-[1440px] mx-auto">
-      <div class="grid md:grid-cols-2 gap-x-[20px] gap-y-12 md:gap-y-40 md:py-20 py-5">
+      <div class="grid lg:grid-cols-2 gap-x-[20px] gap-y-12 md:gap-y-20 lg:gap-y-32 lg:py-20 py-5">
 
 
         <div class="relative flex flex-col rounded-[18px]">
@@ -282,7 +283,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -313,7 +314,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur-sm
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -344,7 +345,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur-sm
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -375,7 +376,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur-sm
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -406,7 +407,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur-sm
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -437,7 +438,7 @@
           <!-- Text box -->
           <div class="relative z-10 mx-3 -mt-8 md:mx-6 md:-mt-16
            p-4 md:p-6
-           bg-[#FFFFFFE8] backdrop-blur-sm
+           bg-[#ffffff87] backdrop-blur-sm
            rounded-[18px] border border-[#C4C4C4]
            flex items-center justify-between gap-4">
             <div class="min-w-0">
@@ -467,7 +468,7 @@
 
   <!--why choose stonebridge-->
   <section
-    class="relative bg-[#0C0C0C] md:py-20 py-10 md:px-15 px-5 flex md:flex-row flex-col justify-center items-center gap-20 text-white">
+    class="relative bg-[#0C0C0C] md:py-20 py-10 md:px-15 px-5 flex lg:flex-row flex-col justify-center items-center gap-20 text-white">
     <div class="absolute top-0 right-0 w-full h-full overflow-hidden">
       <img src="assets/background_design.png" alt="" class="h-full w-full object-cover object-center z-0" />
     </div>
@@ -545,9 +546,15 @@
       </div>
     </div>
 
-    <div class="relative z-1 md:h-[424px] h-[273px] md:w-[659px] w-[330px] rounded-[10px] overflow-hidden">
+    <div class="relative z-1 md:h-[424px] h-[273px] md:w-[659px] w-full rounded-[10px] overflow-hidden">
+
       <img src="assets/service6.jpg" alt="" class="h-full w-full object-cover object-center" />
+
     </div>
+    <div class="absolute lg:right-0  md:bottom-0 bottom-0 lg:h-full md:h-auto overflow-hidden">
+      <img src="assets/image 1.png" alt="" class="h-full w-full object-contain">
+    </div>
+
   </section>
 
   <!--our process -->
@@ -555,11 +562,12 @@
     <div class="max-w-[1440px] mx-auto">
       <div
         class="md:py-22 py-10 md:px-16 px-5 md:text-start text-center flex md:flex-row flex-col justify-between md:items-end items-center gap-5">
+        
         <div>
           <p class="text-[#939393] text-[12px] uppercase font-[600] tracking-[2px]">
             Our process
           </p>
-          <p class="md:text-[47px] text-[25px] font-semibold md:leading-[58px] md:max-w-[30vw] uppercase md:pt-5 pt-2">
+          <p class="md:text-[47px] text-[25px] font-semibold md:leading-[58px] lg:max-w-[30vw] uppercase md:pt-5 pt-2">
             How We Deliver
             <br /><span class="font-[300] text-[#939393]">Your Project</span>
           </p>
@@ -577,6 +585,7 @@
           <span>REQUEST A FREE QUOTE</span>
           <i class="ri-arrow-right-up-line text-[19px] leading-none border-2 rounded-full"></i>
         </a>
+        
       </div>
     </div>
 
@@ -744,14 +753,14 @@
       </p>
     </div>
 
-    <div class="max-w-[1440px] mx-auto">
+    <div class="max-w-[1440px] mx-auto px-0 md:px-8 lg:px-16">
 
-      <div class="swiper projectsSwiper relative pb-20 md:px-[60px]">
+      <div class="swiper projectsSwiper relative pb-20">
 
         <div class="swiper-wrapper pb-15">
 
           <div class="swiper-slide">
-            <div class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]">
+            <div class="relative overflow-hidden rounded-[10px] w-full h-[181px] md:h-[220px] lg:h-[280px]">
               <img src="assets/before.jpg" alt="Initial Site Condition"
                 class="w-full h-full object-cover rounded-[10px] block" />
               <span
@@ -769,26 +778,27 @@
 
             </div>
 
-            <div class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full">
-              <h2 class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight">
+            <div class="flex items-start gap-3 md:gap-4 lg:gap-5 bg-black text-white p-3 md:p-4 lg:p-5 pt-6 md:pt-7 lg:pt-8 w-full">
+              <h2 class="md:text-[36px] lg:text-[47px] text-[25px] leading-none font-bold tracking-tight shrink-0">
                 01
               </h2>
-              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
-              <div class="flex flex-col gap-2 flex-1">
-                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+              <div class="w-[1px] md:h-[38px] lg:h-[42px] h-[30px] bg-[#F9FA0E] shrink-0"></div>
+              <div class="flex flex-col gap-1.5 md:gap-2 flex-1 min-w-0">
+                <h3 class="md:text-[16px] lg:text-[20px] text-[18px] md:leading-[20px] lg:leading-[22px] leading-[20px] font-bold uppercase">
                   Initial Site Condition
                 </h3>
 
-                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                <p class="lg:text-[15px] md:text-[12.5px] text-[13px] md:leading-[17px] lg:leading-[22px] leading-[18px] text-white">
                   We visit the site, assess the space and identify the scope of
                   work.
                 </p>
               </div>
             </div>
+
           </div>
 
           <div class="swiper-slide">
-            <div class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]">
+            <div class="relative overflow-hidden rounded-[10px] w-full h-[181px] md:h-[220px] lg:h-[280px]">
               <img src="assets/service1.jpg" alt="Demolition / Strip-out Works"
                 class="w-full h-full object-cover rounded-[10px] block" />
               <span
@@ -805,17 +815,17 @@
               </span>
             </div>
 
-            <div class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full">
-              <h2 class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight">
+            <div class="flex items-start gap-3 md:gap-4 lg:gap-5 bg-black text-white p-3 md:p-4 lg:p-5 pt-6 md:pt-7 lg:pt-8 w-full">
+              <h2 class="md:text-[36px] lg:text-[47px] text-[25px] leading-none font-bold tracking-tight shrink-0">
                 02
               </h2>
-              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
-              <div class="flex flex-col gap-2 flex-1">
-                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+              <div class="w-[1px] md:h-[38px] lg:h-[42px] h-[30px] bg-[#F9FA0E] shrink-0"></div>
+              <div class="flex flex-col gap-1.5 md:gap-2 flex-1 min-w-0">
+                <h3 class="md:text-[16px] lg:text-[20px] text-[18px] md:leading-[20px] lg:leading-[22px] leading-[20px] font-bold uppercase">
                   DEMOLITION / STRIP-OUT WORKS
                 </h3>
 
-                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                <p class="lg:text-[15px] md:text-[12.5px] text-[13px] md:leading-[17px] lg:leading-[22px] leading-[18px] text-white">
                   Our team carries out the agreed works safely and efficiently,
                   working to the agreed scope.
                 </p>
@@ -824,7 +834,7 @@
           </div>
 
           <div class="swiper-slide">
-            <div class="relative overflow-hidden rounded-[10px] md:w-[330px] md:w-full h-[181px] md:h-[280px]">
+            <div class="relative overflow-hidden rounded-[10px] w-full h-[181px] md:h-[220px] lg:h-[280px]">
               <img src="assets/service5.jpg" alt="Site Clearance & Handover"
                 class="w-full h-full object-cover rounded-[10px] block" />
               <span
@@ -841,17 +851,17 @@
               </span>
             </div>
 
-            <div class="flex items-start gap-5 bg-black text-white p-3 pt-8 w-full">
-              <h2 class="md:text-[47px] text-[25px] leading-none font-bold tracking-tight">
+            <div class="flex items-start gap-3 md:gap-4 lg:gap-5 bg-black text-white p-3 md:p-4 lg:p-5 pt-6 md:pt-7 lg:pt-8 w-full">
+              <h2 class="md:text-[36px] lg:text-[47px] text-[25px] leading-none font-bold tracking-tight shrink-0">
                 03
               </h2>
-              <div class="w-[1px] h-[42px] bg-[#F9FA0E]"></div>
-              <div class="flex flex-col gap-2 flex-1">
-                <h3 class="text-[20px] leading-[18px] font-bold uppercase">
+              <div class="w-[1px] md:h-[38px] lg:h-[42px] h-[30px] bg-[#F9FA0E] shrink-0"></div>
+              <div class="flex flex-col gap-1.5 md:gap-2 flex-1 min-w-0">
+                <h3 class="md:text-[16px] lg:text-[20px] text-[18px] md:leading-[20px] lg:leading-[22px] leading-[20px] font-bold uppercase">
                   SITE CLEARANCE & HANDOVER
                 </h3>
 
-                <p class="md:text-[16px] text-[14px] leading-[18px] text-white">
+                <p class="lg:text-[15px] md:text-[12.5px] text-[13px] md:leading-[17px] lg:leading-[22px] leading-[18px] text-white">
                   We remove all waste and materials, leaving the space clean and
                   ready for the next stage.
                 </p>
@@ -1237,7 +1247,7 @@
       </div>
 
 
-      <div class="absolute md:bottom-0 bottom-10 z-10">
+      <div class="absolute md:bottom-0 bottom-10 z-10 max-w-[1440px] overflow-hidden">
         <div class="flex items-center gap-5">
           <img src="assets/background_design.png" alt="" class="md:h-50 h-20" />
           <img src="assets/background_design.png" alt="" class="md:h-50 h-20" />
