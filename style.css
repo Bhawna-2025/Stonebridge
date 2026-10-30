@@ -14,4 +14,34 @@ body {
   overflow-x: clip;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1250px) {
+  .worker-image {
+    height: 600px;
+    
+  }
+  .image_conatiner{
+    bottom: 150px;
+    left: 550px;
+  }
+
+  .about_heading{
+    font-size: 31px;
+    line-height: 35px;
+  }
+  .about_para{
+    font-size: 14px;
+    padding-left: 20px;
+  }
+  .about_box{
+    padding-inline:20px
+  }
+
+}
+
+@media screen and (min-width: 1024px ) and (max-width:1120px) {
+  .nav_links{
+    font-size: 11px;
+  }
+  
+}
 
